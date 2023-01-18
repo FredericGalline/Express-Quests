@@ -12,7 +12,7 @@ app.get("/api/users", userHandlers.getUsers);
 app.get("/api/users/:id", userHandlers.getUserById);
 ```
 
-## ajout du .env dans gitignore
+## Ajout du .env dans gitignore
 
 Masquer les parametres d'accés à la base.
 
