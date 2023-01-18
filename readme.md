@@ -1,3 +1,5 @@
+# Quete 03
+
 ## Création d'un fichier userHandlers.js
 
 Création des fonctions **getUsers** et **getUsersId** pour requêter la table users
@@ -22,3 +24,26 @@ Masquer les parametres d'accés à la base.
 - [x] L'url /api/users affiche la liste des utilisateurs au format json
 - [x] L'url /api/users/2 affiche un utilisateur au format json
 - [x] L'url /api/users/0 affiche "Not found"
+
+# Quete 03
+
+## userHandlers.js
+
+ajout de postUser, dans le module.exports
+
+## app.js
+
+ajout de la route
+
+```
+app.post("/api/users", userHandlers.postUser);
+```
+
+## Critères d'acceptation
+
+- [x] Le GitHub contient une route POST pour les utilisateurs
+- [x] Une requête POST sur /api/users devrait créer un nouvel utilisateur dans la base de données
+
+```
+
+```
