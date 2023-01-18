@@ -29,11 +29,11 @@ Masquer les parametres d'accés à la base.
 
 ## userHandlers.js
 
-ajout de postUser, dans le module.exports
+ajout de _postUser_, dans le module.exports
 
 ## app.js
 
-ajout de la route
+ajout de la route pour le POST
 
 ```
 app.post("/api/users", userHandlers.postUser);
