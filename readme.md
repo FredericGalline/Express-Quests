@@ -1,4 +1,4 @@
-# Quête 02
+# Quête 02 : SELECT
 
 ## Création d'un fichier userHandlers.js
 
@@ -25,7 +25,7 @@ Masquer les parametres d'accés à la base.
 - [x] L'url /api/users/2 affiche un utilisateur au format json
 - [x] L'url /api/users/0 affiche "Not found"
 
-# Quête 03
+# Quête 03 : POST
 
 ## userHandlers.js
 
