@@ -1,5 +1,10 @@
-Création d'un fichier userHandlers.js
-Création des routes dans app.js
+## Création d'un fichier userHandlers.js
+
+Création des fonctions **getUsers** et **getUsersId** pour requêter la table users
+
+## Création des routes dans app.js
+
+J'etais sur la route toute la sainte journée ...
 
 ```
 const userHandlers = require("./userHandlers");
@@ -7,10 +12,13 @@ app.get("/api/users", userHandlers.getUsers);
 app.get("/api/users/:id", userHandlers.getUserById);
 ```
 
-ajout du .env dans gitignore
+## ajout du .env dans gitignore
 
-Le serveur fonctionne
+Masquer les parametres d'accés à la base.
 
-- [x]L'url /api/users affiche la liste des utilisateurs au format json
-- [x]L'url /api/users/2 affiche un utilisateur au format json
-- [x]L'url /api/users/0 affiche "Not found"
+## Critères de validation
+
+- [x] Le serveur fonctionne :tada:
+- [x] L'url /api/users affiche la liste des utilisateurs au format json
+- [x] L'url /api/users/2 affiche un utilisateur au format json
+- [x] L'url /api/users/0 affiche "Not found"
