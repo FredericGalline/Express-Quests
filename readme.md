@@ -60,3 +60,21 @@ ajout de app.put("/api/users/:id", userHandlers.updateUser);
 
 - [x] Le GitHub contient une route PUT pour les utilisateurs
 - [x] Une requête PUT sur /api/users/:id devrait mettre à jour le bon utilisateur dans la base de données
+
+# Quete 05 : DELETE
+
+ajout de _deleteUser_ dns module export
+
+## app.js
+
+ajout de la route pour le DELETE
+
+```
+ajout de app.delete("/api/users/:id", movieHandlers.deleteUser);
+```
+
+## Critères d'acceptation
+
+- [x] Le lien GitHub contient une route DELETE pour les utilisateurs
+- [x] Une requête DELETE sur /api/users/:id devrait supprimer le bon utilisateur dans la base de données
+
