@@ -78,3 +78,26 @@ ajout de app.delete("/api/users/:id", movieHandlers.deleteUser);
 - [x] Le lien GitHub contient une route DELETE pour les utilisateurs
 - [x] Une requête DELETE sur /api/users/:id devrait supprimer le bon utilisateur dans la base de données
 
+# Quete 06 : GET
+
+ajout d'un filtre dans _getUsers_
+
+```
+if (req.query.language != null) {
+    sql += " WHERE language = ?";
+    sqlValues.push(req.query.language);
+
+    if (req.query.city != null) {
+      sql += " AND city = ?";
+      sqlValues.push(req.query.city);
+    }
+  } else if (req.query.city != null) {
+    sql += " WHERE city = ?";
+    sqlValues.push(req.query.city);
+  }
+```
+
+- [x] La route renvoyant une liste d'utilisateurs les renvoie tous si aucun paramètre n'est passé via l'URL.
+- [x] Sinon, elle retourne une liste filtrée selon le paramètre de requête language ou city.
+- [x] (bonus) Si les paramètres language et city sont tous les 2 fournis, les éléments renvoyés doivent répondre aux deux conditions de filtrage.
+- [x] GET api/users renvoie un statut 200 même si la liste est vide.
