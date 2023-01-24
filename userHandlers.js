@@ -47,8 +47,37 @@ const postUser = (req, res) => {
     });
 };
 
+const updateUser = (req, res) => {
+  // Récupère l'id du utilisateur à mettre à jour depuis les paramètres de la requête
+  const id = parseInt(req.params.id);
+  // Destructure les propriétés du utilisateur depuis le corps de la requête
+  const { firstname, lastname, email, city, language } = req.body;
+
+  // Effectue une mise à jour du utilisateur dans la base de données
+  database
+    .query(
+      "update users set firstname = ?, lastname = ?, email = ?, city = ?, language = ? where id = ?",
+      [firstname, lastname, email, city, language, id]
+    )
+    // En cas de succès, envoie un statut 204 (Pas de contenu) au client
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        // Si aucune ligne n'a été affectée, envoie un statut 404 (Non trouvé) au client
+        res.status(404).send("Not Found");
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    // En cas d'erreur, affiche l'erreur dans la console et envoie un statut 500 (Erreur interne du serveur) au client
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error editing the user");
+    });
+};
+
 module.exports = {
   getUsers,
   getUserById,
   postUser,
+  updateUser,
 };

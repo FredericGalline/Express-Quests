@@ -43,3 +43,16 @@ app.post("/api/users", userHandlers.postUser);
 
 - [x] Le GitHub contient une route POST pour les utilisateurs
 - [x] Une requête POST sur /api/users devrait créer un nouvel utilisateur dans la base de données
+
+#Quete 04 : PUT
+
+ajout de _updateUser_ dns module export
+
+## app.js
+
+ajout de app.put("/api/users/:id", userHandlers.updateUser);
+
+## Critères d'acceptation
+
+- [x] Le GitHub contient une route PUT pour les utilisateurs
+- [x] Une requête PUT sur /api/users/:id devrait mettre à jour le bon utilisateur dans la base de données
