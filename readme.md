@@ -50,7 +50,11 @@ ajout de _updateUser_ dns module export
 
 ## app.js
 
+ajout de la route pour le PUT
+
+```
 ajout de app.put("/api/users/:id", userHandlers.updateUser);
+```
 
 ## Critères d'acceptation
 
