@@ -101,3 +101,27 @@ if (req.query.language != null) {
 - [x] Sinon, elle retourne une liste filtrée selon le paramètre de requête language ou city.
 - [x] (bonus) Si les paramètres language et city sont tous les 2 fournis, les éléments renvoyés doivent répondre aux deux conditions de filtrage.
 - [x] GET api/users renvoie un statut 200 même si la liste est vide.
+
+# Quete 07 : HASHEDPASSWORD
+
+dans userHandler.js modification du database :
+
+````
+database
+    .query("select * from users where id = ?", [id])
+    .then(([users]) => {
+      if (users[0] != null) {
+        // Supprimez simplement la colonne "hashedPassword"
+        const userWithoutPassword = { ...users[0] };
+        delete userWithoutPassword.hashedPassword;
+        res.json(userWithoutPassword);
+      } else {
+        res.status(404).send("Not Found");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+```
